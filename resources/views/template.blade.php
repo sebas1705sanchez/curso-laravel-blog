@@ -10,6 +10,7 @@
         <a href="{{ route('home') }}">Home</a>
         <a href="{{ route('blog') }}">Blog</a>
     </p>
+    <hr>
 
     @yield('content')
 </body>
