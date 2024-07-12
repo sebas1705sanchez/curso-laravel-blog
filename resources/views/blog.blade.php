@@ -9,6 +9,8 @@
             <a href="{{ route('post', $post->slug) }}">
                 {{ $post->title }}
             </a>
+            <br>
+            <samp>{{ $post->user->name }}</samp>
         </p>
 
     @endforeach
