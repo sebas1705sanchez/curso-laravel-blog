@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\AssignOp\Pow;
 
 class PageController extends Controller
 {
@@ -13,16 +15,17 @@ class PageController extends Controller
 
     public function blog() {
 
-        $posts = [
-            ['id' => 1, 'title' => 'Primer Post', 'slug' => 'php'],
-            ['id' => 2, 'title' => 'Segundo Post', 'slug' => 'laravel'],
-        ];
+        //$posts = Post::get();
+        //$posts = Post::get()->first();
+        //$posts = Post::get()->find(10);
+        //dd($posts);
+
+        $posts = Post::latest()->paginate();
+        //dd($posts->items());
         return view('blog', ['posts' => $posts]);
     }
 
-    public function post($slug) {
-
-        $post = $slug;
+    public function post(Post $post) {
 
         return view('post', ['post' => $post]);
     }
