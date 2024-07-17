@@ -25,7 +25,14 @@
 			@endif
 		</header>
 
+        <div class="opacity-60 h-px mb-8" style="background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 50%, rgba(0, 0, 0, 0) 100%);"></div>
+        </div>
+
 		@yield('content')
+
+        <p class="py-16">
+            <img src="{{ asset('images/logo.png') }}" alt="" class="h-12 mx-auto">
+        </p>
 	</div>
 </body>
 </html>
